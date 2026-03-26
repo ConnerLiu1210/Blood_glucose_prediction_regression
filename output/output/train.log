@@ -1,0 +1,53 @@
+Training log
+Loading Excel files...
+Loaded successfully.
+Cleaned Master Clarity shape: (119325, 19)
+Rows with numeric glucose: 118011
+High count: 1082
+Cleaned Daily Insulin Dosing shape: (529, 7)
+Cleaned Daily Nutrition shape: (528, 6)
+Building transformer sequences for regression...
+Transformer sequence shape: (117004, 36, 15)
+Transformer label shape: (117004,)
+Number of unique subjects: 100
+Target glucose range: min=40.00, max=400.00, mean=179.03
+Train samples: 90388
+Test samples: 26616
+Train subjects: 80
+Test subjects: 20
+Training on device: cpu
+Epoch 1/5, Train MSE Loss: 5100.9435
+Epoch 2/5, Train MSE Loss: 764.3215
+Epoch 3/5, Train MSE Loss: 743.2505
+Epoch 4/5, Train MSE Loss: 727.2745
+Epoch 5/5, Train MSE Loss: 722.2438
+
+===== FINAL RESULTS =====
+MAE: 15.7400
+RMSE: 22.5653
+R2: 0.8396
+
+Prediction preview (first 20 rows):
+    true_glucose  pred_glucose  abs_error
+0          332.0    351.512390  19.512390
+1          332.0    359.189880  27.189880
+2          333.0    357.769836  24.769836
+3          336.0    354.636566  18.636566
+4          336.0    355.177887  19.177887
+5          340.0    355.316528  15.316528
+6          344.0    349.926331   5.926331
+7          348.0    353.223328   5.223328
+8          351.0    353.491119   2.491119
+9          346.0    353.567139   7.567139
+10         337.0    353.622833  16.622833
+11         334.0    348.025330  14.025330
+12         333.0    355.666290  22.666290
+13         335.0    352.712097  17.712097
+14         337.0    356.495422  19.495422
+15         337.0    363.518616  26.518616
+16         337.0    368.026672  31.026672
+17         336.0    370.556274  34.556274
+18         335.0    369.874512  34.874512
+19         335.0    371.068298  36.068298
+
+Done.
