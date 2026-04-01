@@ -1,0 +1,233 @@
+2026-04-01 18:40:12,793 | INFO | Starting 30-minute glucose regression pipeline
+2026-04-01 18:40:15,746 | INFO | Daily Clinical Condition and Use uses date column: Date | non-null dates: 529
+2026-04-01 18:40:15,759 | INFO | Daily Medications uses date column: Date__dup1 | non-null dates: 529
+2026-04-01 18:40:15,771 | INFO | Daily Insulin Dosing uses date column: Date .1 | non-null dates: 529
+2026-04-01 18:40:15,783 | INFO | Daily Hospital Labs uses date column: Date .2 | non-null dates: 529
+2026-04-01 18:40:15,787 | INFO | ===== DEBUG DAILY_INS =====
+2026-04-01 18:40:15,787 | INFO | daily_ins rows: 529
+2026-04-01 18:40:15,787 | INFO | daily_ins date non-null: 529
+2026-04-01 18:40:15,787 | INFO | iv_insulin_flag non-null=529, mean=0.6370510396975425
+2026-04-01 18:40:15,787 | INFO | subq_insulin_flag non-null=529, mean=0.6124763705103969
+2026-04-01 18:40:15,787 | INFO | nph_flag non-null=528, mean=0.054924242424242424
+2026-04-01 18:40:15,787 | INFO | basal_units non-null=491, mean=12.675661914460285
+2026-04-01 18:40:15,790 | INFO | ===== DEBUG DAILY AFTER REDCAP MERGE =====
+2026-04-01 18:40:15,790 | INFO | iv_insulin_flag non-null=531, mean=0.6365348399246704
+2026-04-01 18:40:15,791 | INFO | subq_insulin_flag non-null=531, mean=0.6120527306967984
+2026-04-01 18:40:15,791 | INFO | nph_flag non-null=530, mean=0.05471698113207547
+2026-04-01 18:40:15,791 | INFO | basal_units non-null=493, mean=12.624239350912779
+2026-04-01 18:40:15,791 | INFO | enteral_flag non-null=530, mean=0.6037735849056604
+2026-04-01 18:40:15,791 | INFO | tpn_flag non-null=529, mean=0.00945179584120983
+2026-04-01 18:40:15,891 | INFO | ===== DATASET SUMMARY =====
+2026-04-01 18:40:15,891 | INFO | Master Clarity rows: 117818
+2026-04-01 18:40:15,892 | INFO | Master Clarity subjects: 100
+2026-04-01 18:40:15,892 | INFO | Master Clarity time span: 2022-08-16 14:47:59 -> 2024-09-18 13:25:13
+2026-04-01 18:40:15,893 | INFO | Glucose mean/std: 179.17 / 58.80
+2026-04-01 18:40:15,893 | INFO | Glucose min/max: 40.00 / 400.00
+2026-04-01 18:40:15,893 | INFO | Baseline rows: 101
+2026-04-01 18:40:15,893 | INFO | Age mean: 54.58
+2026-04-01 18:40:15,894 | INFO | BMI mean: 31.35
+2026-04-01 18:40:15,894 | INFO | DM history rate: 0.8600
+2026-04-01 18:40:15,894 | INFO | Admission eGFR mean: 49.15
+2026-04-01 18:40:15,894 | INFO | Daily REDCap rows: 534
+2026-04-01 18:40:15,894 | INFO | enteral_flag rate: 0.6038
+2026-04-01 18:40:15,894 | INFO | tpn_flag rate: 0.0095
+2026-04-01 18:40:15,894 | INFO | steroid_flag rate: 0.4783
+2026-04-01 18:40:15,894 | INFO | pressor_flag rate: 0.2900
+2026-04-01 18:40:15,894 | INFO | iv_insulin_flag rate: 0.6365
+2026-04-01 18:40:15,894 | INFO | subq_insulin_flag rate: 0.6121
+2026-04-01 18:40:15,894 | INFO | dialysis_flag rate: 0.2472
+2026-04-01 18:40:15,894 | INFO | Secondary daily rows: 485
+2026-04-01 18:40:15,894 | INFO | Secondary unique MRNs: 99
+2026-04-01 18:40:20,203 | INFO | ===== MATCHING SUMMARY =====
+2026-04-01 18:40:20,203 | INFO | Total candidate pair rows: 9900
+2026-04-01 18:40:20,203 | INFO | Accepted matched pairs: 38
+2026-04-01 18:40:20,203 | INFO | High-confidence matches: 0
+2026-04-01 18:40:20,203 | INFO | Medium-confidence matches: 38
+2026-04-01 18:40:20,204 | INFO | Matched subjects: 38
+2026-04-01 18:40:20,204 | INFO | Unmatched subjects: 62
+2026-04-01 18:40:20,219 | INFO | ===== DEBUG MERGED BEFORE FEATURE ENGINEERING =====
+2026-04-01 18:40:20,220 | INFO | iv_insulin_flag non-null=117711, mean=0.6104102420334548
+2026-04-01 18:40:20,220 | INFO | subq_insulin_flag non-null=117711, mean=0.6100024636610002
+2026-04-01 18:40:20,220 | INFO | nph_flag non-null=117527, mean=0.057688871493358974
+2026-04-01 18:40:20,220 | INFO | basal_units non-null=108809, mean=13.53897196004007
+2026-04-01 18:40:20,220 | INFO | enteral_flag non-null=117556, mean=0.6438888699853687
+2026-04-01 18:40:20,220 | INFO | tpn_flag non-null=117299, mean=0.006351290292329858
+2026-04-01 18:40:20,363 | INFO | ===== MODEL TABLE SUMMARY =====
+2026-04-01 18:40:20,363 | INFO | Model table rows: 115013
+2026-04-01 18:40:20,364 | INFO | Model table subjects: 100
+2026-04-01 18:40:20,365 | INFO | Target mean/std: 178.84 / 57.79
+2026-04-01 18:40:20,454 | INFO | ===== TRAIN / VAL / TEST SPLIT =====
+2026-04-01 18:40:20,454 | INFO | Total subjects: 100
+2026-04-01 18:40:20,454 | INFO | Train subjects: 70, rows: 76467
+2026-04-01 18:40:20,454 | INFO | Val subjects: 10, rows: 10006
+2026-04-01 18:40:20,455 | INFO | Test subjects: 20, rows: 28540
+2026-04-01 18:40:20,455 | INFO | Number of features: 66
+2026-04-01 18:40:24,879 | INFO | ===== OVERALL GLUCOSE TRAJECTORY =====
+2026-04-01 18:40:24,880 | INFO | 
+ minute  mean_glucose
+   -180      178.4643
+   -150      178.5526
+   -120      178.6434
+    -90      178.7241
+    -60      178.8025
+    -30      178.8638
+      0      178.8248
+     30      178.8353
+2026-04-01 18:40:24,880 | INFO | Overall trajectory plot saved to: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/overall_glucose_trajectory_30min.png
+2026-04-01 18:40:24,890 | INFO | ===== SUBGROUP TRAJECTORY GROUP COUNTS =====
+2026-04-01 18:40:24,893 | INFO | no_intervention: 2497 rows
+2026-04-01 18:40:24,895 | INFO | nutrition_only: 3197 rows
+2026-04-01 18:40:24,898 | INFO | insulin_only: 38245 rows
+2026-04-01 18:40:24,901 | INFO | both_nutrition_and_insulin: 71074 rows
+2026-04-01 18:40:24,993 | INFO | ===== SUBGROUP GLUCOSE TRAJECTORY =====
+2026-04-01 18:40:24,994 | INFO | 
+ minute  mean_glucose                      group
+   -180      138.0591            no_intervention
+   -150      138.3994            no_intervention
+   -120      138.8765            no_intervention
+    -90      139.6762            no_intervention
+    -60      140.5612            no_intervention
+    -30      141.7990            no_intervention
+      0      142.9716            no_intervention
+     30      144.2295            no_intervention
+   -180      140.7730             nutrition_only
+   -150      140.6300             nutrition_only
+   -120      140.5077             nutrition_only
+    -90      140.1827             nutrition_only
+    -60      139.9041             nutrition_only
+    -30      139.6240             nutrition_only
+      0      139.0507             nutrition_only
+     30      138.6009             nutrition_only
+   -180      186.6282               insulin_only
+   -150      186.8092               insulin_only
+   -120      187.0132               insulin_only
+    -90      187.1172               insulin_only
+    -60      187.1803               insulin_only
+    -30      187.2169               insulin_only
+      0      187.1838               insulin_only
+     30      187.2955               insulin_only
+   -180      177.2880 both_nutrition_and_insulin
+   -150      177.3056 both_nutrition_and_insulin
+   -120      177.3096 both_nutrition_and_insulin
+    -90      177.3483 both_nutrition_and_insulin
+    -60      177.4044 both_nutrition_and_insulin
+    -30      177.4362 both_nutrition_and_insulin
+      0      177.3755 both_nutrition_and_insulin
+     30      177.3085 both_nutrition_and_insulin
+2026-04-01 18:40:24,994 | INFO | Subgroup trajectory plot saved to: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/subgroup_glucose_trajectory_30min.png
+2026-04-01 18:40:25,046 | INFO | ===== CURRENT VS 30M GROUP COUNTS =====
+2026-04-01 18:40:25,049 | INFO | no_intervention: 2497 rows
+2026-04-01 18:40:25,051 | INFO | nutrition_only: 3197 rows
+2026-04-01 18:40:25,053 | INFO | insulin_only: 38245 rows
+2026-04-01 18:40:25,056 | INFO | both_nutrition_and_insulin: 71074 rows
+2026-04-01 18:40:25,157 | INFO | ===== CURRENT GLUCOSE VS 30-MIN LATER GLUCOSE =====
+2026-04-01 18:40:25,158 | INFO | 
+glucose_bin  current_glucose_mean  glucose_30m_mean  n_samples                      group
+   [40, 60)               55.5789           68.8947         19            no_intervention
+   [60, 80)               72.5051           75.1877        293            no_intervention
+  [80, 100)               88.4684           89.1435        237            no_intervention
+ [100, 120)              110.8641          111.8231        390            no_intervention
+ [120, 140)              129.0202          128.7003        397            no_intervention
+ [140, 160)              149.3168          151.1931        404            no_intervention
+ [160, 180)              168.3938          168.4779        226            no_intervention
+ [180, 200)              189.2119          189.7483        151            no_intervention
+ [200, 220)              209.5120          209.0560        125            no_intervention
+ [220, 240)              229.2418          233.0330         91            no_intervention
+ [240, 260)              248.8919          254.6351         74            no_intervention
+ [260, 280)              266.0417          266.9583         24            no_intervention
+ [280, 300)              290.2632          301.6842         19            no_intervention
+ [300, 320)              308.2963          305.1852         27            no_intervention
+ [320, 340)              328.8235          331.8824         17            no_intervention
+   [40, 60)               55.5000           62.8333         18             nutrition_only
+   [60, 80)               73.0097           81.5049        103             nutrition_only
+  [80, 100)               89.5363           89.7542        537             nutrition_only
+ [100, 120)              109.0059          109.8809        512             nutrition_only
+ [120, 140)              130.8800          130.2483        600             nutrition_only
+ [140, 160)              148.6632          150.0334        389             nutrition_only
+ [160, 180)              170.1774          169.6140        513             nutrition_only
+ [180, 200)              187.9309          184.1964        275             nutrition_only
+ [200, 220)              206.9919          201.5161        124             nutrition_only
+ [220, 240)              229.0870          217.0217         46             nutrition_only
+ [240, 260)              247.2600          237.8200         50             nutrition_only
+ [260, 280)              270.0952          267.3810         21             nutrition_only
+ [280, 300)              283.7778          274.3333          9             nutrition_only
+   [40, 60)               51.9000           82.9000         70               insulin_only
+   [60, 80)               71.7787           91.3825        366               insulin_only
+  [80, 100)               90.4189           96.6024       1172               insulin_only
+ [100, 120)              111.2193          114.4449       3192               insulin_only
+ [120, 140)              129.6265          131.3149       4503               insulin_only
+ [140, 160)              149.5773          151.0803       5044               insulin_only
+ [160, 180)              169.7871          170.0316       5087               insulin_only
+ [180, 200)              189.4848          188.5761       4482               insulin_only
+ [200, 220)              209.1239          208.2761       3745               insulin_only
+ [220, 240)              229.0317          227.1250       2969               insulin_only
+ [240, 260)              248.7244          246.6702       2362               insulin_only
+ [260, 280)              268.9367          266.6778       1738               insulin_only
+ [280, 300)              288.9530          285.6199       1468               insulin_only
+ [300, 320)              308.5776          304.9065        909               insulin_only
+ [320, 340)              328.4739          322.4859        498               insulin_only
+ [340, 360)              348.6492          338.7692        325               insulin_only
+ [360, 380)              368.0287          361.6557        244               insulin_only
+ [380, 400)              385.4930          366.0563         71               insulin_only
+   [40, 60)               50.5084           57.8997        299 both_nutrition_and_insulin
+   [60, 80)               71.7186           77.8649        629 both_nutrition_and_insulin
+  [80, 100)               91.6602           97.1565       1910 both_nutrition_and_insulin
+ [100, 120)              110.8507          113.8827       5701 both_nutrition_and_insulin
+ [120, 140)              130.1480          131.5037       9675 both_nutrition_and_insulin
+ [140, 160)              149.7318          149.7748      11560 both_nutrition_and_insulin
+ [160, 180)              169.3566          168.8332      11054 both_nutrition_and_insulin
+ [180, 200)              189.2567          188.3810       9144 both_nutrition_and_insulin
+ [200, 220)              208.8594          207.5347       7501 both_nutrition_and_insulin
+ [220, 240)              228.6373          226.6568       4519 both_nutrition_and_insulin
+ [240, 260)              248.6276          246.4807       3206 both_nutrition_and_insulin
+ [260, 280)              268.7637          267.2241       2048 both_nutrition_and_insulin
+ [280, 300)              289.1466          287.1889       1535 both_nutrition_and_insulin
+ [300, 320)              308.2042          306.1116       1048 both_nutrition_and_insulin
+ [320, 340)              329.0585          325.0912        581 both_nutrition_and_insulin
+ [340, 360)              347.7619          344.5918        294 both_nutrition_and_insulin
+ [360, 380)              369.4628          368.4628        242 both_nutrition_and_insulin
+ [380, 400)              388.7008          382.2283        127 both_nutrition_and_insulin
+2026-04-01 18:40:25,158 | INFO | Current vs 30m plot saved to: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/current_vs_30min_glucose_by_group.png
+2026-04-01 18:40:25,166 | INFO | ===== DEBUG INSULIN / NUTRITION COUNTS (TEST) =====
+2026-04-01 18:40:25,167 | INFO | iv_insulin_flag non-null=28540, mean=0.6907147862648914
+2026-04-01 18:40:25,167 | INFO | subq_insulin_flag non-null=28540, mean=0.49667133847231953
+2026-04-01 18:40:25,167 | INFO | nph_flag non-null=28362, mean=0.038678513503984206
+2026-04-01 18:40:25,167 | INFO | basal_units non-null=25175, mean=16.224508440913606
+2026-04-01 18:40:25,167 | INFO | enteral_flag non-null=28540, mean=0.7560967063770148
+2026-04-01 18:40:25,167 | INFO | tpn_flag non-null=28289, mean=0.0
+2026-04-01 18:40:25,167 | INFO | insulin_any true count: 28008
+2026-04-01 18:40:25,167 | INFO | nutrition_any true count: 21579
+2026-04-01 18:40:25,167 | INFO | both true count: 21291
+2026-04-01 18:40:25,167 | INFO | insulin only count: 6717
+2026-04-01 18:40:25,178 | INFO | ===== SUBSET METRICS TABLE =====
+2026-04-01 18:40:25,179 | INFO | 
+                           subset  n_samples       mae      rmse  nrmse_std         r2
+                          overall      28540  8.923423 13.290133   0.263040   0.930810
+                  no_intervention        244  4.354385  5.907265   0.173477   0.969906
+                   nutrition_only        288  6.882005  9.462671   0.640311   0.590002
+                     insulin_only       6717 11.785176 17.611033   0.281654   0.920671
+       both_nutrition_and_insulin      21291  8.100558 11.717765   0.253896   0.935537
+                          enteral      21579  8.084294 11.690532   0.254309   0.935327
+                       iv_insulin      19713  8.590818 12.913259   0.284519   0.919049
+                     subq_insulin      14175 10.481895 15.560521   0.273309   0.925302
+                    basal_insulin      11262  9.170710 13.815155   0.240122   0.942342
+                      nph_insulin       1097 10.432335 14.089817   0.200048   0.959981
+                      steroid_yes      16535  8.041550 12.455106   0.258319   0.933271
+                       steroid_no      12005 10.138064 14.360978   0.270259   0.926960
+                  vasopressor_yes      14174  7.880137 11.693157   0.249356   0.937822
+                   vasopressor_no      14366  9.952765 14.696669   0.275802   0.923933
+reduced_renal_function_egfr_lt_60      20392  9.198328 13.629302   0.270993   0.926563
+             high_creatinine_ge_2      10764  8.416570 13.267767   0.275698   0.923991
+                         dialysis      10735  9.861600 14.758967   0.312317   0.902458
+               hypoglycemia_lt_70        104 25.801472 30.386256   3.616447 -12.078690
+                  in_range_70_180      16833  7.938037 11.494642   0.487885   0.761968
+             hyperglycemia_gt_180      11603 10.201686 15.313204   0.394197   0.844609
+                 high_variability       7135 12.552435 17.789632   0.298846   0.910691
+                       rapid_rise         97 24.658625 32.821325   0.416945   0.826157
+                       rapid_fall         56 34.042050 45.465339   0.561798   0.684384
+2026-04-01 18:40:25,189 | INFO | Output file: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/subgroup_metrics.csv
+2026-04-01 18:40:25,189 | INFO | Overall trajectory plot: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/overall_glucose_trajectory_30min.png
+2026-04-01 18:40:25,189 | INFO | Subgroup trajectory plot: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/subgroup_glucose_trajectory_30min.png
+2026-04-01 18:40:25,189 | INFO | Current vs 30m plot: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/current_vs_30min_glucose_by_group.png
+2026-04-01 18:40:25,189 | INFO | Log file: /Users/zhilinliu/PycharmProjects/Blood_glucose/output_lightgbm_30min_subgroups/20260401_184012/run.log
+2026-04-01 18:40:25,189 | INFO | Finished
